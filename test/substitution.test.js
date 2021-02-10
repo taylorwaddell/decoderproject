@@ -2,6 +2,7 @@ const substitution = require("../src/substitution");
 const expect = require("chai").expect;
 
 /* available test alphabets */
+// Your alphabet strings could stand to be given more descriptive variable names
 const capAlpha = "zyxwVUTSrqPONmlkjIHGfedcba";
 const backAlpha = "zyxwvutsrqponmlkjihgfedcba";
 const symAlpha = "klmn*pqr!tuvwxyzab#defghij";
@@ -10,9 +11,10 @@ const pAlpha = "abcdefghijklmnopqrstuvwxy";
 const gAlpha = "abcdefghijklmnopqrstuvwxyz*";
 
 describe ("substitution()", () => {
+    // nested describes! that's beautiful!
     describe("Should return false when:", () => {
         it("nothing is given for the alphabet", () => {
-            const actual = substitution("irrelevant");
+            const actual = substitution("irrelevant"); // pahaha
             expect(actual).to.eql(false);
         });
         it("alphabet given is smaller than 26", () => {
