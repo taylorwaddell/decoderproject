@@ -12,6 +12,9 @@ const substitutionModule = (function () {
     }
     const userAlpha = lowerAndSplit(alphabet);
     const chk = alphabet.toLowerCase().split("").sort();
+    
+    // i need this line to excute the if's below. But won't work if !alphabet
+    console.log(alphabet);
     if (
       alphabet.length < 26 ||
       alphabet.length > 26 ||
