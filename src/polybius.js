@@ -5,6 +5,12 @@
 
 const polybiusModule = (function () {
   // you can add any code you want within this function scope
+  
+  // You're using a 2D array, when it might be more straightforward to do this
+  // with an object. That way, the first entry in the inner array would be your
+  // key. 
+  // If you want a challenge, recreate the matrix given in the problem description
+  // and traverse it with your code. 
   const polySquare = [
     ["a", 11],
     ["b", 21],
@@ -35,12 +41,14 @@ const polybiusModule = (function () {
     [" ", 00],
   ];
 
+  // This would be more straightforward if polySquare was an object
   function getCode(input) {
     const found = polySquare.filter((polyLetter) =>
       polyLetter.includes(`${input}`)
     );
     return found[0][1];
   }
+
 
   function getLetter(input) {
     const inputNum = parseInt(input);
@@ -53,6 +61,9 @@ const polybiusModule = (function () {
     return found[0][0];
   }
 
+  // You should remove your test code before you turn this in.
+  // Also, you could also get this whole function down to a single line.
+  // Think over the ternary operator
   function isOdd(number) {
     checkrq = (number) => {
       if (!number) {
@@ -70,6 +81,10 @@ const polybiusModule = (function () {
     }
   }
 
+  // You could probably accomplish the same thing with the encoding logic, just
+  // return the other element from that inner array.
+  // In fact, with a little thought, you could probably end up using the same
+  // function for both operations.
   function decode(input) {
     const inputNoSpace = input.replace(/ /g, "00");
     if (!isOdd(inputNoSpace.length)) {
