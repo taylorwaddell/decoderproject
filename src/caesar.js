@@ -32,19 +32,12 @@ const caesarModule = (function () {
         finalMess += shiftedLetter;
       }
     }
-
+    
     return finalMess;
   }
-
   return {
     caesar,
   };
 })();
 
 module.exports = caesarModule.caesar;
-
-/*
-    if (!input || input < -25 || input > 25){
-      return false
-    }
- */
