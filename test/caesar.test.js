@@ -2,6 +2,12 @@ const caesar = require("../src/caesar");
 const expect = require("chai").expect;
 
 describe("caesar()", () => {
+    // I really like the way you split your tests into three distinct subgroups.
+    // If you wouldn't mind, I think you should share that technique with the 
+    // group/cohort. Grouping your tests together would help them understand how
+    // they might approach testing and ultimately approach the major problems
+    // their code is aiming to resolve.
+
     describe("Should return false if given:", () => {
         it("A shift argument that is 0", () => {
             const actual = caesar("irrelevant", 0);
@@ -52,6 +58,8 @@ describe("caesar()", () => {
             const actual = caesar("c", -6);
             expect(actual).to.eql(expected);
         });
+        // suggestion for clarity: "should decode given string according to shift parameter when ENCODE is false"
+        // suggestion for continuity: This block of tests is for ENCODING... this test is a DECODE test.
         it("should take in coded phrases and decode it using the provided corresponding shift number", () => {
             const expected = "ice is cold!";
             const actual = caesar("oik oy iurj!", 6, false);
@@ -64,6 +72,7 @@ describe("caesar()", () => {
             const actual = caesar("oik", 6, false);
             expect(actual).to.eql(expected);
         });
+        // This block of tests is for DECODING
         it("should encode when given negative shift argument", () => {
             const expected = "n";
             const actual = caesar("g", -7, false);
@@ -96,3 +105,8 @@ describe("caesar()", () => {
         });
     });
 });
+
+// In general, it's a good idea to throw in some edge-case tests, even if it's
+// just for the practice. You did a great job of thoroughly covering the rubric
+// requirements, but you haven't found/tested any weird inputs that might break
+// your code.
