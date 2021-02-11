@@ -8,12 +8,7 @@ const caesarModule = (function () {
     inputLower = input.toLowerCase();
     for (let i = 0; i < inputLower.length; i++) {
       let inputLetter = inputLower[i].charCodeAt();
-      if (
-        (inputLetter < 97 && inputLetter > 90) ||
-        inputLetter < 65 ||
-        inputLetter > 122 ||
-        inputLower[i] === " "
-      ) {
+      if (inputLetter < 65 || inputLetter > 122 || inputLower[i] === " ") {
         finalMess += inputLower[i];
       } else {
         let shiftcode;
@@ -24,15 +19,14 @@ const caesarModule = (function () {
         }
         if (shiftedCode > 122) {
           shiftedCode -= 26;
-        }
-        if (shiftedCode < 97) {
+        } else if (shiftedCode < 97) {
           shiftedCode += 26;
         }
         let shiftedLetter = String.fromCharCode(shiftedCode);
         finalMess += shiftedLetter;
       }
     }
-    
+
     return finalMess;
   }
   return {

@@ -52,11 +52,6 @@ describe("caesar()", () => {
             const actual = caesar("c", -6);
             expect(actual).to.eql(expected);
         });
-        it("should take in coded phrases and decode it using the provided corresponding shift number", () => {
-            const expected = "ice is cold!";
-            const actual = caesar("oik oy iurj!", 6, false);
-            expect(actual).to.eql(expected);
-        });
     });
     describe("DECODING:", () => {
         it("should correctly shift letters by specified number of positions", () => {

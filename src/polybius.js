@@ -60,7 +60,6 @@ const polybiusModule = (function () {
       }
       return number % 2;
     };
-    const test = checkrq(number);
     if (checkrq(number) === 0) {
       return true;
     } else if (checkrq(number) === null) {
